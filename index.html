@@ -1,14 +1,41 @@
 <!DOCTYPE html>
+<!-- 1. 声明这是 HTML5 标准网页，必须写在第一行 -->
 <html>
+<!-- 2. 网页的根标签，所有内容都包在这里 -->
 <head>
+  <!-- 3. 头部区域：存放配置、标题、样式，不显示在页面上 -->
   <meta charset="UTF-8">
+  <!-- 4. 字符编码：UTF-8 支持中文/特殊符号，防止乱码 -->
   <title>石大生存指南</title>
+  <!-- 5. 浏览器标签页显示的标题 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 6. 移动端适配：让网页在手机上正常显示，不缩放错乱 -->
   <!-- 主题可换为 vue 或 buble，看你喜欢的风格 -->
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <!-- 7. 引入 Docsify 主题样式（vue风格），决定网站颜值 -->
 </head>
 <body>
+  <!-- 8. 页面主体区域 -->
   <div id="app"></div>
+  <!-- 9. Docsify 挂载点：所有 markdown 内容都会渲染在这里 -->
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <!-- 10. 引入 Docsify 核心框架，让网站能运行、解析md文件 -->
+    <!-- 👇 新增：Docsify 核心配置（开启侧边栏目录） -->
+  <script>
+    window.$docsify = {
+      // 网站名称（左上角显示）
+      name: '石大生存指南',
+      // 开启侧边栏：自动读取根目录的 _sidebar.md 文件
+      loadSidebar: true,
+      // 所有页面共用同一个侧边栏（最重要）
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      // 页面标题跟随内容切换
+      subMaxLevel: 3,
+      // 自动显示目录层级
+      auto2top: true
+    }
+  </script>
 </body>
 </html>
